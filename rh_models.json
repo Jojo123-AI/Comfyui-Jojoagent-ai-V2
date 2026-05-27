@@ -1,0 +1,107 @@
+{
+  "plugin": {
+    "name": "Comfyui-Jojoagent-ai-V2",
+    "default_api_base": "http://124.221.138.114:8001",
+    "billing_rule": "(模型扣费 + 用时扣费) x 1.3"
+  },
+  "vision_models": [
+    {
+      "id": "qwen/qwen3.6-plus",
+      "display_name": "qwen3.6-plus",
+      "provider": "RunningHub",
+      "endpoint": "https://llm.runninghub.cn/v1/chat/completions",
+      "supports_image": true,
+      "input_price_per_1k": 0.00306,
+      "output_price_per_1k": 0.01836,
+      "runtime_price_per_hour": 0,
+      "notes": "识图、对话。"
+    },
+    {
+      "id": "bytedance/doubao-seed-2.0-pro",
+      "display_name": "doubao-seed-2.0-pro",
+      "provider": "RunningHub",
+      "endpoint": "https://llm.runninghub.cn/v1/chat/completions",
+      "supports_image": true,
+      "input_price_per_1k": 0.00272,
+      "output_price_per_1k": 0.0136,
+      "runtime_price_per_hour": 0,
+      "notes": "识图、对话。"
+    }
+  ],
+  "image_models": [
+    {
+      "id": "全能图片PRO-图生图-低价渠道版",
+      "display_name": "gpt-image-2-pro",
+      "provider": "RunningHub",
+      "endpoint": "/rhart-image-n-pro/edit",
+      "mode": "image-to-image",
+      "resolution_prices": {
+        "1K": 0.16,
+        "2K": 0.16,
+        "4K": 0.2
+      },
+      "runtime_price_per_hour": {
+        "Lite": 0.4,
+        "Standard": 4,
+        "Plus": 6
+      },
+      "notes": "4K 图像生成、多语言画面文字生成、自动翻译。"
+    },
+    {
+      "id": "全能图片V2-图生图-低价渠道版",
+      "display_name": "gpt-image-2-低价",
+      "provider": "RunningHub",
+      "endpoint": "/rhart-image-n-g31-flash/image-to-image",
+      "mode": "image-to-image",
+      "resolution_prices": {
+        "1K": 0.16,
+        "2K": 0.16,
+        "4K": 0.2
+      },
+      "runtime_price_per_hour": {
+        "Lite": 0.4,
+        "Standard": 4,
+        "Plus": 6
+      },
+      "notes": "结构保持、极速风格迁移、智能局部重绘、动态特征提取、灵活多模态输入。"
+    },
+    {
+      "id": "全能图片G-2.0-图生图-低价渠道版",
+      "display_name": "gemini 3.1-低价",
+      "provider": "RunningHub",
+      "endpoint": "/rhart-image-g-2/image-to-image",
+      "mode": "image-to-image",
+      "resolution_prices": {
+        "1K": 0.16,
+        "2K": 0.16,
+        "4K": 0.2
+      },
+      "runtime_price_per_hour": {
+        "Lite": 0.4,
+        "Standard": 4,
+        "Plus": 6
+      },
+      "notes": "无缝局部重绘、智能画面扩展、精准特征保留、完美边缘融合、极低试错成本。"
+    }
+  ],
+  "runtime_profiles": [
+    {
+      "id": "Lite",
+      "label": "Lite 轻量机型",
+      "price_per_hour": 0.4
+    },
+    {
+      "id": "Standard",
+      "label": "Standard 标准机型",
+      "price_per_hour": 4
+    },
+    {
+      "id": "Plus",
+      "label": "Plus 高性能机型",
+      "price_per_hour": 6
+    }
+  ],
+  "image_specs": ["1K", "2K", "4K"],
+  "aspect_ratios": ["智能比例", "1:1", "1:2", "2:1", "9:16", "16:9", "3:4", "4:3", "3:2", "2:3", "5:4", "4:5", "21:9", "9:21"],
+  "image_qualities": ["低画质", "标准画质", "高画质"]
+}
